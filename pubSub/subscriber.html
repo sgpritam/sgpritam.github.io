@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="https://cdn.ably.io/lib/ably.min-1.js"></script>
+
+  <script type="text/javascript">
+    var apiKey = "1yZM4w.qzjdDA:0uS-nZXzezg3mxnK";
+    var realtime = new Ably.Realtime(apiKey);
+    var channel = realtime.channels.get("sport");
+    channel.subscribe(function(msg) {
+      alert("Received: " + JSON.stringify(msg.data));
+    });
+  </script>
+</html>
